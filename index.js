@@ -43,8 +43,12 @@ function addDataToDOM(data) {
 	const postElement = document.createElement('div');
 	postElement.classList.add('blog-post');
 	postElement.innerHTML = `
-		<p>${data.post.title}</p>
-		
+		<h2 class="title">${data.post.title}</h2>
+		<p class="text">${data.post.body}</p>
+		<div class="user-info">
+			<img src="${data.user.picture.large}" alt="${data.user.name.first}" />
+			<span>${data.user.name.first} ${data.user.name.last}</span>
+		</div>
 	`;
 	container.appendChild(postElement);
 	

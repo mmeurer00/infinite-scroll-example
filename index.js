@@ -38,19 +38,15 @@ async function getPost() {
 function getRandomNr() {
 	return Math.floor(Math.random() * 100) + 1;
 }
-
+num = 1
 function addDataToDOM(data) {
 	const postElement = document.createElement('div');
 	postElement.classList.add('blog-post');
-	postElement.innerHTML = `
-		<h2 class="title">${data.post.title}</h2>
-		<p class="text">${data.post.body}</p>
-		<div class="user-info">
-			<img src="${data.user.picture.large}" alt="${data.user.name.first}" />
-			<span>${data.user.name.first} ${data.user.name.last}</span>
-		</div>
+    postElement.innerHTML = `
+        <h2>Blog Post #${num}</h2>
+		<p class="title">${data.post.title}</p>
 	`;
 	container.appendChild(postElement);
-	
+	num += 1
 	loading.classList.remove('show');
 }

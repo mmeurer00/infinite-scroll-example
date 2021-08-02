@@ -44,7 +44,12 @@ function addDataToDOM(data) {
 	postElement.classList.add('blog-post');
     postElement.innerHTML = `
         <h2>Blog Post #${num}</h2>
-		<p class="title">${data.post.title}</p>
+		<h4 class="title">${data.post.title}</h4>
+		<p class="text">${data.post.body}</p>
+		<div class="user-info">
+			<img src="${data.user.picture.large}" alt="${data.user.name.first}" />
+			<span>${data.user.name.first} ${data.user.name.last}</span>
+		</div>
 	`;
 	container.appendChild(postElement);
 	num += 1
